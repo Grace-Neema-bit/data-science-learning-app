@@ -13,7 +13,7 @@ topic = st.sidebar.selectbox(
     [
         "🏠 Home",
         "💻 Setup: VS Code & Jupyter",
-        
+
         "📊 Introduction to Data Science",
         "🐍 Python Basics",
         "📈 Data Analysis",
@@ -37,7 +37,76 @@ if topic == "🏠 Home":
 
     👉 Use the sidebar to start learning.
     """)
+# ---------------- SETUP SECTION ----------------
+elif topic == "💻 Setup: VS Code & Jupyter":
+    st.header("💻 Setup: VS Code & Jupyter Notebook")
 
+    st.subheader("🧑‍💻 What is VS Code?")
+    st.write("""
+    VS Code (Visual Studio Code) is a lightweight code editor used to write and run code.
+    
+    It supports:
+    - Python programming
+    - Extensions for data science
+    - Debugging tools
+    """)
+
+    st.subheader("📥 How to Install VS Code")
+    st.write("""
+    1. Go to the official VS Code website  
+    2. Download and install  
+    3. Open VS Code after installation  
+    """)
+
+    st.subheader("⚙️ Install Python Extension")
+    st.write("""
+    1. Open VS Code  
+    2. Click Extensions (left sidebar)  
+    3. Search for "Python"  
+    4. Install it  
+    """)
+
+    st.divider()
+
+    st.subheader("📓 What is Jupyter Notebook?")
+    st.write("""
+    Jupyter Notebook is an interactive environment where you can:
+    - Write code
+    - See outputs instantly
+    - Add explanations (notes)
+    """)
+
+    st.subheader("📥 How to Install Jupyter")
+    st.code("""
+pip install notebook
+""")
+
+    st.subheader("▶️ How to Run Jupyter Notebook")
+    st.code("""
+jupyter notebook
+""")
+
+    st.write("This will open Jupyter in your browser.")
+
+    st.subheader("💡 Why Beginners Use Jupyter")
+    st.write("""
+    - Easy to test code step-by-step  
+    - Great for learning and experiments  
+    - Combines code + explanation  
+    """)
+
+    st.subheader("🧠 Quick Check")
+
+    tool = st.radio(
+        "Which tool is used for interactive notebooks?",
+        ["VS Code", "Jupyter Notebook", "Excel"]
+    )
+
+    if st.button("Check Setup Answer"):
+        if tool == "Jupyter Notebook":
+            st.success("Correct 🎉")
+        else:
+            st.error("Try again ❌")
 # ---------------- INTRODUCTION ----------------
 elif topic == "📊 Introduction to Data Science":
     st.header("📊 Introduction to Data Science")
