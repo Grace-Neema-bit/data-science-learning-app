@@ -70,6 +70,38 @@ elif topic == "📊 Introduction to Data Science":
     - Pandas  
     - Machine Learning libraries  
     """)
+    st.subheader("📌 What is Data Science?")
+    st.write("""Your notes here...""")
+
+# ➕ ADD NEW SECTION
+    st.subheader("📊 Types of Data")
+    st.write("""
+    There are different types of data:
+
+    - Structured data (tables, databases)
+    - Unstructured data (text, images)
+    - Semi-structured data (JSON, XML)
+    """)
+
+# ➕ ADD NEW SECTION
+    st.subheader("🔄 Data Science Workflow")
+    st.write("""
+    A typical data science workflow includes:
+
+    1. Data collection  
+    2. Data cleaning  
+    3. Data analysis  
+    4. Modeling  
+    5. Deployment  
+    """)
+
+# ➕ ADD NEW SECTION
+    st.subheader("👨‍💻 Roles in Data Science")
+    st.write("""
+    - Data Analyst → works with data insights  
+    - Data Scientist → builds models  
+    - Data Engineer → builds data pipelines  
+    """)
 
     st.subheader("🧠 Quick Check")
     answer = st.radio(
@@ -132,3 +164,4 @@ elif topic == "🧠 Quiz":
             st.success("Correct 🎉")
         else:
             st.error("Try again ❌")
+
