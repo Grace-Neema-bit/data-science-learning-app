@@ -18,6 +18,7 @@ topic = st.sidebar.selectbox(
         "🐍 Python Basics",
         "🐍 Python Intro Course",
         "⚙️ Python Functions Deep Dive",
+        "🔁 Python Loops",
         "📈 Data Analysis",
         "🧠 Quiz"
     ]
@@ -646,6 +647,167 @@ print(even_numbers)
 
         st.success(f"You scored {score}/3 🎉")
 
+elif topic == "🔁 Python Loops":
+    st.header("🔁 Python Loops")
+
+    st.write("""
+Loops allow us to repeat a block of code multiple times.
+They are essential for automation and data processing.
+""")
+
+    st.divider()
+
+    # ---------------- WHAT ARE LOOPS ----------------
+    st.subheader("📌 What Are Loops?")
+    st.write("""
+A loop repeats a set of instructions.
+
+Python has two main types:
+- for loops
+- while loops
+""")
+
+    st.divider()
+
+    # ---------------- FOR LOOP ----------------
+    st.subheader("🔹 The for Loop")
+
+    st.code("""
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+""")
+
+    st.success("apple\nbanana\ncherry")
+
+    st.divider()
+
+    # ---------------- WHILE LOOP ----------------
+    st.subheader("🔹 The while Loop")
+
+    st.code("""
+count = 1
+
+while count <= 3:
+    print("Count is:", count)
+    count += 1
+""")
+
+    st.success("Count is: 1\nCount is: 2\nCount is: 3")
+
+    st.divider()
+
+    # ---------------- LOOP CONTROL ----------------
+    st.subheader("⚙️ Loop Control Statements")
+
+    st.write("Break statement:")
+
+    st.code("""
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+""")
+
+    st.success("0\n1\n2")
+
+    st.write("Continue statement:")
+
+    st.code("""
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+""")
+
+    st.success("0\n1\n2\n4")
+
+    st.write("Else with loop:")
+
+    st.code("""
+for i in range(5):
+    print(i)
+else:
+    print("Loop completed without break")
+""")
+
+    st.success("0\n1\n2\n3\n4\nLoop completed without break")
+
+    st.divider()
+
+    # ---------------- NESTED LOOPS ----------------
+    st.subheader("🔁 Nested Loops")
+
+    st.code("""
+for day in ["Mon", "Tue"]:
+    for subject in ["Math", "English"]:
+        print(day, subject)
+""")
+
+    st.success("Mon Math\nMon English\nTue Math\nTue English")
+
+    st.divider()
+
+    # ---------------- LOOP EXAMPLE ----------------
+    st.subheader("➕ Loop Example: Sum of Numbers")
+
+    st.code("""
+total = 0
+
+for i in range(1, 6):
+    total += i
+
+print("Total:", total)
+""")
+
+    st.success("Total: 15")
+
+    st.divider()
+
+    # ---------------- BEST PRACTICES ----------------
+    st.subheader("💡 Best Practices")
+    st.write("""
+- Keep loops simple and readable  
+- Avoid deeply nested loops  
+- Use break/continue carefully  
+- Ensure while loops eventually stop  
+""")
+
+    st.divider()
+
+    # ---------------- MINI QUIZ ----------------
+    st.subheader("🧠 Mini Exercises")
+
+    q1 = st.radio(
+        "1. Which loop is best when you know number of iterations?",
+        ["while loop", "for loop", "if statement"],
+        key="loop_q1"
+    )
+
+    q2 = st.radio(
+        "2. What does 'break' do?",
+        ["Stops loop", "Skips iteration", "Repeats loop"],
+        key="loop_q2"
+    )
+
+    q3 = st.radio(
+        "3. What does 'continue' do?",
+        ["Ends program", "Skips current iteration", "Deletes loop"],
+        key="loop_q3"
+    )
+
+    if st.button("Submit Loop Quiz"):
+        score = 0
+
+        if q1 == "for loop":
+            score += 1
+        if q2 == "Stops loop":
+            score += 1
+        if q3 == "Skips current iteration":
+            score += 1
+
+        st.success(f"You scored {score}/3 🎉")
 # ---------------- DATA ANALYSIS ----------------
 elif topic == "📈 Data Analysis":
     st.header("📈 Data Analysis with Pandas")
