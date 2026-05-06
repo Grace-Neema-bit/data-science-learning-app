@@ -70,8 +70,6 @@ elif topic == "📊 Introduction to Data Science":
     - Pandas  
     - Machine Learning libraries  
     """)
-    st.subheader("📌 What is Data Science?")
-    st.write("""Your notes here...""")
 
 # ➕ ADD NEW SECTION
     st.subheader("📊 Types of Data")
