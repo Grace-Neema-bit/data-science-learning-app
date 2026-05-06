@@ -13,7 +13,7 @@ topic = st.sidebar.selectbox(
     [
         "🏠 Home",
         "💻 Setup: VS Code & Jupyter",
-
+        "💻 Setup: VS Code & Jupyter"
         "📊 Introduction to Data Science",
         "🐍 Python Basics",
         "📈 Data Analysis",
@@ -104,6 +104,77 @@ jupyter notebook
 
     if st.button("Check Setup Answer"):
         if tool == "Jupyter Notebook":
+            st.success("Correct 🎉")
+        else:
+            st.error("Try again ❌")
+    st.divider()
+
+    # ---------------- GIT SECTION ----------------
+    st.header("🔧 Git & Git Bash Setup")
+
+    st.subheader("📌 What is Git?")
+    st.write("""
+    Git is a version control system that helps you:
+    - Track changes in your code
+    - Save versions of your project
+    - Collaborate with others
+    """)
+
+    st.subheader("📌 What is Git Bash?")
+    st.write("""
+    Git Bash is a terminal that allows you to run Git commands 
+    using a Linux-style interface on Windows.
+    """)
+
+    st.subheader("📥 How to Install Git & Git Bash")
+    st.write("""
+    1. Go to the official Git website  
+    2. Download Git for Windows  
+    3. Install it (Git Bash will be installed automatically)  
+    """)
+
+    st.subheader("⚙️ First-Time Git Setup")
+    st.write("After installing, open Git Bash and run:")
+
+    st.code("""
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+""")
+
+    st.subheader("📂 Basic Git Commands")
+    st.code("""
+git init
+git add .
+git commit -m "First commit"
+git status
+""")
+
+    st.write("""
+    - `git init` → Start a new project  
+    - `git add .` → Add files  
+    - `git commit` → Save changes  
+    - `git status` → Check project status  
+    """)
+
+    st.subheader("🌐 Connect to GitHub")
+    st.code("""
+git remote add origin https://github.com/your-username/repo-name.git
+git push -u origin main
+""")
+
+    st.write("""
+    This uploads your project to GitHub so it can be shared and deployed.
+    """)
+
+    st.subheader("🧠 Quick Check")
+
+    git_q = st.radio(
+        "What does Git help you do?",
+        ["Cook food", "Track code changes", "Play games"]
+    )
+
+    if st.button("Check Git Answer"):
+        if git_q == "Track code changes":
             st.success("Correct 🎉")
         else:
             st.error("Try again ❌")
