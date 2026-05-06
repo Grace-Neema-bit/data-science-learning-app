@@ -16,6 +16,8 @@ topic = st.sidebar.selectbox(
         "💻 Setup: VS Code & Jupyter"
         "📊 Introduction to Data Science",
         "🐍 Python Basics",
+        "🐍 Python Intro Course",
+        "⚙️ Python Functions Deep Dive",
         "📈 Data Analysis",
         "🧠 Quiz"
     ]
@@ -274,6 +276,375 @@ print(x + y)
 
     if st.button("Add 10"):
         st.success(f"Result: {num + 10}")
+
+elif topic == "🐍 Python Intro Course":
+    st.header("🐍 Introduction to Python for Data Science")
+    st.write("Instructor: Data Science Technical Mentor")
+
+    st.divider()
+
+    # ---------------- LESSON OUTLINE ----------------
+    st.subheader("📌 Lesson Outline")
+    st.write("""
+    - What is Python?
+    - Why Python?
+    - Python Installation
+    - Python Syntax
+    - Basic Data Types
+    - Variables and Constants
+    - Control Structures
+    - Functions
+    - Python Libraries
+    - Hands-on Examples
+    - Conclusion
+    - Mini Exercises
+    """)
+
+    st.divider()
+
+    # ---------------- WHAT IS PYTHON ----------------
+    st.subheader("1. What is Python?")
+    st.write("""
+    Python is a high-level, easy-to-read programming language created by Guido van Rossum.
+
+    It is widely used in:
+    - Data Science
+    - Artificial Intelligence
+    - Automation
+    """)
+
+    st.subheader("2. Why Python?")
+    st.write("""
+    - Easy to learn and read  
+    - Huge community support  
+    - Powerful Data Science libraries  
+    - Free and open-source  
+    """)
+
+    st.subheader("3. Python Installation")
+    st.write("""
+    Steps:
+    1. Go to https://www.python.org/
+    2. Download latest version
+    3. Check "Add to PATH"
+    4. Verify installation:
+    """)
+
+    st.code("python --version", language="bash")
+
+    st.subheader("4. Python Syntax")
+    st.code('print("Hello, world!")')
+
+    st.subheader("5. Basic Data Types")
+    st.write("""
+    - Integer → 5  
+    - Float → 5.7  
+    - String → "hello"  
+    - Boolean → True / False  
+    """)
+
+    st.subheader("6. Variables and Constants")
+    st.code("""
+name = "Alice"
+age = 25
+PI = 3.14
+""")
+
+    st.subheader("7. Control Structures")
+
+    st.write("If Statement:")
+    st.code("""
+age = 18
+if age >= 18:
+    print("You're an adult.")
+else:
+    print("You're a minor.")
+""")
+
+    st.write("Loop Example:")
+    st.code("""
+for i in range(3):
+    print("Hello", i)
+""")
+
+    st.subheader("8. Functions")
+    st.code("""
+def greet(name):
+    return "Hello, " + name
+
+print(greet("Alice"))
+""")
+
+    st.subheader("9. Python Libraries")
+    st.code("""
+import pandas as pd
+import numpy as np
+""")
+
+    st.subheader("10. Hands-on Examples")
+
+    st.write("Basic Calculator")
+    st.code("""
+a = 10
+b = 5
+
+print("Sum:", a + b)
+print("Difference:", a - b)
+print("Product:", a * b)
+print("Quotient:", a / b)
+""")
+
+    st.write("Check Even or Odd")
+    st.code("""
+num = 7
+
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+""")
+
+    st.subheader("11. Data Structures")
+
+    st.write("Lists")
+    st.code("""
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])
+""")
+
+    st.write("Dictionaries")
+    st.code("""
+person = {"name": "Alice", "age": 25}
+print(person["name"])
+""")
+
+    st.subheader("12. Comparison Operators")
+    st.code("""
+x = 10
+y = 5
+print(x > y and y < 3)
+""")
+
+    st.subheader("13. Python Built-in Methods")
+    st.code("""
+text = "hello"
+print(text.upper())
+print(len(text))
+
+numbers = [1, 2, 3]
+numbers.append(4)
+print(numbers)
+""")
+
+    st.subheader("14. Conclusion")
+    st.write("""
+Python is:
+- Simple
+- Powerful
+- Essential for Data Science careers
+""")
+
+    st.divider()
+
+    # ---------------- MINI EXERCISES ----------------
+    st.subheader("🧠 Mini Exercises")
+
+    q1 = st.radio(
+        "1. What is Python used for?",
+        ["Cooking", "Data Science", "Driving"],
+        key="py_q1"
+    )
+
+    q2 = st.radio(
+        "2. What does a list use?",
+        ["()", "[]", "{}"],
+        key="py_q2"
+    )
+
+    q3 = st.radio(
+        "3. What keyword defines a function?",
+        ["def", "function", "fun"],
+        key="py_q3"
+    )
+
+    if st.button("Submit Python Quiz"):
+        score = 0
+
+        if q1 == "Data Science":
+            score += 1
+        if q2 == "[]":
+            score += 1
+        if q3 == "def":
+            score += 1
+
+        st.success(f"You scored {score}/3 🎉")
+
+elif topic == "⚙️ Python Functions Deep Dive":
+    st.header("⚙️ Functions in Python")
+
+    st.write("""
+Functions are reusable blocks of code that perform specific tasks.
+They help make code cleaner, reusable, and easier to manage.
+""")
+
+    st.divider()
+
+    # ---------------- WHAT IS A FUNCTION ----------------
+    st.subheader("📌 What is a Function in Python?")
+    st.write("""
+A function is a block of code that performs a specific task.
+
+Why we use functions:
+- Avoid repeating code
+- Improve readability
+- Break big problems into smaller parts
+""")
+
+    st.code("""
+def add(a, b):
+    return a + b
+
+add(1, 2)
+""")
+
+    st.caption("👉 Single Responsibility Principle: each function should do ONE job")
+
+    st.divider()
+
+    # ---------------- BASIC FUNCTION ----------------
+    st.subheader("🔹 Defining and Calling Functions")
+
+    st.code("""
+def greet():
+    print("Hello, welcome to class!")
+
+greet()
+""")
+
+    st.success("Hello, welcome to class!")
+
+    st.divider()
+
+    # ---------------- PARAMETERS ----------------
+    st.subheader("📥 Functions with Parameters")
+
+    st.code("""
+def greet(name):
+    print("Hello", name, "- welcome to class!")
+
+greet("Alice")
+greet("Bob")
+""")
+
+    st.write("Example Output:")
+    st.success("Hello Alice - welcome to class!")
+    st.success("Hello Bob - welcome to class!")
+
+    st.code("""
+def introduce(name, age):
+    print(f"My name is {name} and I am {age} years old.")
+
+introduce("Tom", 20)
+introduce("Alice", 25)
+""")
+
+    st.divider()
+
+    # ---------------- RETURN VALUES ----------------
+    st.subheader("🔄 Functions That Return Values")
+
+    st.code("""
+def add(x, y):
+    return x + y
+
+result = add(3, 5)
+print(result)
+""")
+
+    st.success("Result: 8")
+
+    st.divider()
+
+    # ---------------- REAL WORLD EXAMPLE ----------------
+    st.subheader("🧹 Real-Life Example: Data Cleaning")
+
+    st.code("""
+def clean_name(name):
+    return name.strip().title()
+
+names = [" alice ", "BOB", "   charLie"]
+cleaned = [clean_name(n) for n in names]
+print(cleaned)
+""")
+
+    st.success("['Alice', 'Bob', 'Charlie']")
+
+    st.divider()
+
+    # ---------------- LAMBDA FUNCTIONS ----------------
+    st.subheader("⚡ Lambda Functions (Anonymous Functions)")
+
+    st.write("""
+Lambda functions are short functions used for quick operations.
+""")
+
+    st.code("""
+square = lambda x: x * x
+square(2)
+""")
+
+    st.success("4")
+
+    st.code("""
+numbers = [1, 2, 3, 4]
+
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)
+""")
+
+    st.success("[1, 4, 9, 16]")
+
+    st.code("""
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)
+""")
+
+    st.success("[2, 4]")
+
+    st.divider()
+
+    # ---------------- QUIZ ----------------
+    st.subheader("🧠 Quick Quiz")
+
+    q1 = st.radio(
+        "1. What is the main purpose of functions?",
+        ["Store data", "Reuse code", "Design websites"],
+        key="func_q1"
+    )
+
+    q2 = st.radio(
+        "2. What keyword defines a function?",
+        ["def", "function", "lambda"],
+        key="func_q2"
+    )
+
+    q3 = st.radio(
+        "3. What do lambda functions do?",
+        ["Make coffee", "Short anonymous functions", "Install packages"],
+        key="func_q3"
+    )
+
+    if st.button("Submit Function Quiz"):
+        score = 0
+
+        if q1 == "Reuse code":
+            score += 1
+        if q2 == "def":
+            score += 1
+        if q3 == "Short anonymous functions":
+            score += 1
+
+        st.success(f"You scored {score}/3 🎉")
 
 # ---------------- DATA ANALYSIS ----------------
 elif topic == "📈 Data Analysis":
