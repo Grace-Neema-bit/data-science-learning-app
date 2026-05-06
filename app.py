@@ -1,54 +1,87 @@
 import streamlit as st
 
-st.title("📘 Data Science Learning Website")
-
-st.write("Welcome to your learning platform!")
-import streamlit as st
-
+# MUST be first Streamlit command
 st.set_page_config(page_title="Data Science Learning Hub", layout="wide")
 
+# Title
+st.title("📘 Data Science Learning Website")
+st.write("Welcome 👋 Learn Data Science step by step.")
 
 # Sidebar navigation
 topic = st.sidebar.selectbox(
     "Choose a topic",
-    ["🏠 Home", "📊 What is Data Science", "🐍 Python Basics", "📈 Data Analysis", "🧠 Quiz"]
+    [
+        "🏠 Home",
+        "📊 Introduction to Data Science",
+        "🐍 Python Basics",
+        "📈 Data Analysis",
+        "🧠 Quiz"
+    ]
 )
 
 # ---------------- HOME ----------------
 if topic == "🏠 Home":
-    st.header("Welcome")
+    st.header("Welcome 👋")
     st.write("""
     This platform will help you learn:
     - Python language
     - Pandas
     - SQL
     - Data analysis
-    - Machine learning and Advanced machine learning
+    - Machine learning
     - Statistics
-    - Natural processing language
+    - Natural language processing
     - Neural networks
-    - KNN
-    
+
     👉 Use the sidebar to start learning.
     """)
 
-# ---------------- DATA SCIENCE INTRO ----------------
-elif topic == "📊 What is Data Science":
-    st.header("📊 What is Data Science?")
-    
+# ---------------- INTRODUCTION ----------------
+elif topic == "📊 Introduction to Data Science":
+    st.header("📊 Introduction to Data Science")
+
+    st.subheader("📌 What is Data Science?")
     st.write("""
-    Data Science is the process of extracting insights from data using:
+    Data Science is the process of extracting meaningful insights from data 
+    using a combination of:
     - Statistics
     - Programming
     - Machine Learning
     """)
 
-    st.subheader("Real-world examples:")
+    st.subheader("🎯 Why is Data Science Important?")
     st.write("""
-    - Netflix recommending movies  
-    - Banks detecting fraud  
-    - Hospitals predicting patient demand  
+    Data Science helps organizations:
+    - Make better decisions
+    - Predict future trends
+    - Understand customer behavior
     """)
+
+    st.subheader("🌍 Real-World Applications")
+    st.write("""
+    - Netflix recommends movies based on your preferences  
+    - Banks detect fraudulent transactions  
+    - Hospitals predict patient demand  
+    """)
+
+    st.subheader("🛠️ Tools Used in Data Science")
+    st.write("""
+    - Python  
+    - Pandas  
+    - Machine Learning libraries  
+    """)
+
+    st.subheader("🧠 Quick Check")
+    answer = st.radio(
+        "Which of these is part of Data Science?",
+        ["Cooking", "Statistics", "Driving"]
+    )
+
+    if st.button("Check Answer"):
+        if answer == "Statistics":
+            st.success("Correct 🎉")
+        else:
+            st.error("Try again ❌")
 
 # ---------------- PYTHON BASICS ----------------
 elif topic == "🐍 Python Basics":
