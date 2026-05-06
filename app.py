@@ -12,6 +12,8 @@ topic = st.sidebar.selectbox(
     "Choose a topic",
     [
         "🏠 Home",
+        "💻 Setup: VS Code & Jupyter",
+        
         "📊 Introduction to Data Science",
         "🐍 Python Basics",
         "📈 Data Analysis",
