@@ -7,9 +7,6 @@ import streamlit as st
 
 st.set_page_config(page_title="Data Science Learning Hub", layout="wide")
 
-# Title
-st.title("📘 Data Science Learning Website")
-st.write("Welcome 👋 Learn Data Science step by step.")
 
 # Sidebar navigation
 topic = st.sidebar.selectbox(
@@ -22,9 +19,15 @@ if topic == "🏠 Home":
     st.header("Welcome")
     st.write("""
     This platform will help you learn:
-    - Python basics
+    - Python language
+    - Pandas
+    - SQL
     - Data analysis
-    - Machine learning foundations
+    - Machine learning and Advanced machine learning
+    - Statistics
+    - Natural processing language
+    - Neural networks
+    - KNN
     
     👉 Use the sidebar to start learning.
     """)
